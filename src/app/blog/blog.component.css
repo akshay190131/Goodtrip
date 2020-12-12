@@ -1,0 +1,49 @@
+
+#blog {
+    width: 95% ;
+}
+.tour {
+    margin-top: 60px;
+}
+.addbutt {
+    margin-top: -5%;
+    border-radius: 15%;
+    font-size: xx-large;
+}
+.rcc {
+     margin-top: 2%;
+     /* border: 2px solid black; */
+     width: 100% ;
+     margin-left: 2%;
+     margin-right: 1%;
+}
+@media only screen and (max-width: 568px) {
+.tour>h1 {
+    font-size: 25px;
+}
+
+.tour>h4 {
+    font-size: 20px;
+}
+
+.rcc {
+    margin-top: 5%;
+}
+}
+@media only screen and (max-width: 370px) {
+    .tour>h1 {
+        font-size: 20px;
+    }
+    .tour>h4 {
+        font-size: 15px;
+    }
+    .rcc {
+        margin-top: 0%;
+    }
+    }
+   
+    .post-block {
+        margin: 0px;
+        /* border: 1px solid black; */
+    }
+    

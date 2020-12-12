@@ -1,0 +1,65 @@
+<div class="signup">
+    <div class="container" id="container">
+
+        <div class="form-container sign-in-container">
+            <form   [formGroup]="signupform" (ngSubmit)="signup(signupform.value)">
+                <h1>Sign Up</h1>
+               <!-- <div class="social-container">
+                    <a  class="social"><i class="fa fa-facebook"></i></a>
+                    <a  class="social"><i class="fa fa-google"></i></a>
+                    <a  class="social"><i class="fa fa-linkedin"></i></a>
+                </div>-->
+
+                <span>or use your account</span>
+                <br>
+           
+                <div class="form-group">
+                    <input type="text" class="form-control input-lg"  [ngClass]="{'is-invalid': formErrors.name , 'is-valid': !formErrors.name && signupform.get('name').valid }"  name="name" placeholder="Name" formControlName="name" required>
+                    <div class="invalid-feedback d-block" *ngIf="formErrors.name" >
+                        {{formErrors.name}}
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <input type="text"  class="form-control input-lg" [ngClass]="{'is-invalid': formErrors.username || (!signupform.get('username').valid && signupform.get('username').dirty) , 'is-valid': !formErrors.username && signupform.get('username').valid }"  id="tuname1" name="username" placeholder="Username" formControlName="username"
+                        required>
+                        <div class="invalid-feedback d-block"  *ngIf="formErrors.username" >
+                            {{formErrors.username}}
+                        </div> 
+                        <div *ngIf="signupform.get('username').hasError('userExists')" class="invalid-feedback d-block"> 
+                            User  already exists. 
+                         </div>   
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control input-lg"  [ngClass]="{'is-invalid': formErrors.email || (!signupform.get('email').valid && signupform.get('email').dirty), 'is-valid': !formErrors.email && signupform.get('email').valid }" name="email" formControlName="email"  placeholder="Email" email required>
+                    <div class="invalid-feedback d-block"  *ngIf="formErrors.email" >
+                        {{formErrors.email}}
+                    </div>
+                    <div *ngIf="signupform.get('email').hasError('emailExists')" class="invalid-feedback d-block"> 
+                        Email already exists. 
+                     </div>  
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control input-lg" [ngClass]="{'is-invalid': formErrors.password , 'is-valid': !formErrors.password && signupform.get('password').valid }" name="password" placeholder="Password" formControlName="password" required>
+                    <div class="invalid-feedback d-block"  *ngIf="formErrors.password" >
+                        {{formErrors.password}}
+                    </div>
+                </div>
+                <button [disabled]="signupform.invalid"    type="submit">Sign Up</button>
+            </form>
+
+
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <h1>Hey, User!</h1>
+                    <p>Already, have an account ?</p>
+                    <!-- <p>{{signupform.value | json}} {{signupform.status | json}}  {{formErrors.username}} {{formErrors.name}} {{formErrors.email}} {{formErrors.password}} </p> -->
+                    
+                    <a [routerLink]="[ '/login']"><button class="ghost">Login</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

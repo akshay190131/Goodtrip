@@ -1,0 +1,16 @@
+* {
+    /* background-image : linear-gradient(to right, rgb(207, 202, 202), rgba(173, 216, 230, 0.219)); */
+    background-color: rgb(215, 221, 221);
+}
+
+.h11{
+    
+    background-size: cover;
+    height: 750px ;
+    width: 100%;
+}
+.baderror {
+    margin-top: 150px;
+    font-weight: 900;
+    font-size: 260px;
+}

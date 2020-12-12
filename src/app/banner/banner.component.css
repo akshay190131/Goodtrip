@@ -1,0 +1,34 @@
+.banner {
+    height:2px;
+    background-image: url('https://free4kwallpapers.com/uploads/originals/2015/10/17/most-beautiful-travel-destinations.jpg');
+    background-position: center;
+    background-size: auto;
+    background-attachment: fixed;
+    padding-top: 5%;
+    opacity: 0;
+}
+
+.banner-highlights {
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    color: white;
+}
+
+.book-btn {
+    width: 130px;
+    padding: 8px 0;
+    outline: none !important;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    margin-top: 5px;
+}
+
+
+
+.book-btn:hover {
+    transition: 1s;
+    transform: scale(1.2);
+}

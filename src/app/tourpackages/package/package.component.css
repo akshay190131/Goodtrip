@@ -1,0 +1,113 @@
+        /* *{
+            margin: 0px;
+            padding: 0px;
+        } */
+        .pack1 {
+            margin-top: 3%;
+            
+        }
+     .mar{
+         margin-top: 1%;
+         margin-left: 3%;
+         margin-right: 3%;
+         margin-bottom: 1%;
+     }
+
+    .image{
+        margin-top: 1%;
+         margin-left: 3%;
+         margin-right: 3%;
+         margin-bottom: 1%;
+        background: url("https://wonderfulengineering.com/wp-content/uploads/2016/01/singapore-wallpaper-1.jpg");
+        height: 600px;
+        background-size: 100% 100% ;
+        border: 2px solid gray;
+        
+    }
+    .ratings{
+        color: gold;
+        padding: 100px 0px;
+    }
+    .hotel{
+        margin:1% 1% 1% 6%;
+        background: url("https://media-cdn.tripadvisor.com/media/photo-s/08/ce/18/63/lobby--v8106717.jpg");
+        height: 200px;
+        width: 200px;
+        background-size: 100% 100%;
+        /* border: 0.3px solid black; */
+        box-shadow: 4px 4px 4px grey;
+        
+           }
+    .plane{
+        margin:1% 1% 1% 6%;
+        color: red; 
+    }
+    .details{
+        display:flex;
+       
+    }
+    .details label {
+  margin: 5px 10px 5px 25px;
+}
+input{
+            width:10%;
+            /* padding: 10px 10px; */
+            
+             border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+.box{
+    margin: 2% 2% 2% 2%;
+    padding: 20px 20px 20px 20px;
+    border-radius: 6px;
+    background:linear-gradient(to right, pink, purple);
+}
+
+
+.subbtn{
+    border-radius: 30px ;
+    color: white;
+    background:linear-gradient(to right, pink, purple);
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.subbtn:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+::selection{
+    color:white;
+    background-color:pink;
+}
+
+.carousel-inner img:hover{
+    background-image:linear-gradient((0,0,0,0.6),(0,0,0,0.6));
+}
+.container-fluid{
+    margin-top: 50px;
+    padding: 0px 0px 0px 0px;
+}
+
+.features {
+            /* padding: 100px 0; */
+            padding-top: 20px;
+        }
+
+        .feature-img img {
+            width: 100%;
+        }
+
+      
+
+        .feature-box {
+            box-shadow: 4px 4px 4px 4px pink;
+            margin-bottom: 50px;
+        }
+
+        .feature-box:hover {
+            transform: scale(1.1);
+            transition: 1s;
+        }

@@ -1,0 +1,39 @@
+<div class="login">
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <h1>Edit the Post</h1>
+            <form [formGroup]="posteditform" (ngSubmit)="updatepost(posteditform.value)">
+                <div class="form-group">
+                    <input type="text" class="form-control input-lg" name="id" placeholder="Id" formControlName="id">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-lg" name="title" placeholder="Title"
+                        formControlName="title">
+                    <span class="ion-at form-control-icon"></span>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-lg" name="author" placeholder="Author"
+                        formControlName="author">
+                    <span class="ion-at form-control-icon"></span>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-lg" name="date" placeholder="Publishdate"
+                        formControlName="date">
+                    <span class="ion-at form-control-icon"></span>
+                </div>
+                <div class="form-group">
+                    <textarea rows="10" class="form-control input-lg" name="excert" placeholder="Post"
+                        formControlName="excert"></textarea>
+                    <span class="ion-at form-control-icon"></span>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-lg" name="image" placeholder="Image"
+                        formControlName="image">
+                    <span class="ion-at form-control-icon"></span>
+                </div>
+
+                <button type="submit" class="btn btn-block btn-success"> Update</button>
+            </form>
+        </div>
+    </div>
+</div>

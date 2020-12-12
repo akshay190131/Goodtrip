@@ -1,0 +1,17 @@
+<section id="blog" class=" ">
+<div class="container-fluid secondary-color">
+<div class="  tour text-center">
+    <h4>{{blog.title}}</h4>
+    <h1>{{blog.tagline}}</h1>
+    <a routerLink="/article-create" class="btn btn-outline-primary offset-10 addbutt" data-toggle="tooltip"  data-placement="bottom" title="Create Blog"  ><i style="font-size: larger;" class="fa fa-plus-square "></i></a>
+</div>
+<div class="row text-center rcc">
+<div class="post-block col-sm-12 col-md-6 col-lg-3 "  *ngFor="let post of pages"><i class="fa fa-pagelines" aria-hidden="true"></i>
+<app-post [post]="post"></app-post>
+</div>
+</div>
+</div>
+<div class="row justify-content-center clearfix">
+    <app-pagination [pager]="pager" (setpage)="setpage($event)" ></app-pagination>
+</div> 
+</section>

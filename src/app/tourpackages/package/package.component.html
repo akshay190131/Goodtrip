@@ -1,0 +1,72 @@
+<div class="pack1">
+  <div class="container-fluid">
+      <ngb-carousel *ngIf="package.sliderimg" >
+        <ng-template ngbSlide *ngFor="let image of package.sliderimg" >
+        <div class=" " >
+          <img style="height: 550px; width: 100%;" src="assets/images/features/{{image}}">
+        </div>
+        </ng-template>
+      </ngb-carousel> 
+  </div>
+
+
+
+
+
+
+
+
+
+  <h1 class="mar" style="color: brown;">{{package.name}} | {{package.duration}} </h1>
+  <hr class="mar">
+  <h2 class="mar" style="color: brown;">About Itinerary</h2>
+  <p class="mar"
+    style="font-size: 15px;font-family: Verdana, Geneva, Tahoma, sans-serif;line-height: 1.5em;word-spacing: 0.8em;">
+    {{package.discription}} </p>
+  <h2 class="mar" style="color: brown;">Inclusions</h2>
+  <h3 class="mar" style="color: brown;font-size: 25px;">- Hotel Included</h3>
+  <span class="mar" style="font-size: 20px;font-family: Verdana, Geneva, Tahoma, sans-serif; ">  
+     {{package.hotel.name}}</span>
+
+  <section class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3" *ngFor="let himg of package.hotel.hotelimg">
+          <div class="feature-box">
+            <div class="feature-img">
+              <img style="height: 260px;" src="assets/images/features/{{himg}}">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <h3 class="mar" style="color: brown;font-size: 25px;">- Flights Included</h3>
+  <p class="mar" style="font-size: 20px;font-family: Verdana, Geneva, Tahoma, sans-serif;">   {{package.flight.count}}
+    Flights Inculded</p>
+  <div class="flights" *ngFor="let flight of package.flight.timewithplace">
+    <span class="plane"><i class="fa fa-plane" aria-hidden="true"></i></span> 
+    <span> {{flight.from}}   <i class="fa fa-arrow-right" aria-hidden="true"></i>   {{flight.to}}</span>
+    <br>
+  </div>
+  <!-- <form class="mar box">
+    <div class="details">
+      <label for="fadte" style="color: white; font-size: 15px;">From Date:</label>
+      <input type="date" id="fdate">
+      <label for="tdate" style="color: white;  font-size: 15px;">To Date:</label>
+      <input type="date" id="tdate">
+      <label for="nop" style="color: white;  font-size: 15px;">No Of Adults:</label>
+      <input type="number" id="nop" min="1" max="1000">
+
+      <label for="nop" style="color: white;  font-size: 15px;">No Of Children:</label>
+      <input type="number" id="nop" min="1" max="1000">
+      <a href="payment.html" class="onlbtn" style="text-decoration: none;">
+        <input class="subbtn" style="margin-left: 80px; width: 150px; height: 35px; text-align: center; " value="Pay"
+          class="btn">
+      </a>
+    </div>
+  </form> -->
+</div>

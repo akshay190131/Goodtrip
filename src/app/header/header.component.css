@@ -1,0 +1,110 @@
+.top-navbar {
+    /* border: 1px solid black; */
+    /* background-color: black; */
+    font-family: poppins;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.navbar-collapse {
+    margin-left: 13%;
+    /* border: 2px solid white; */
+    font-family: poppins;
+    font-size: 20px;
+    /* padding-left: 1%; */
+}
+#logoicon{
+    display: none;
+}
+.navbar-dark .navbar-brand {
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: black;
+    background-size: 2rem;
+}
+
+.navbar-brand{
+    margin-left: 0.1%;
+}
+#listicon {
+    /* border: 1px solid white; */
+    float: right;
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+.nav-link {
+    padding: .2rem 2rem;
+    margin: 0px 7px;
+}
+.nav-link.active {
+    background-color: rgb(13, 230, 13) ;
+    border: 1px transparent white;
+    border-radius: 7px ;
+    /* border-bottom: ; */
+}
+.nav-link.active:hover {
+    color: black !important ;
+    transition: 1s;
+}
+.navbar-nav .nav-link:hover {
+    color: turquoise;
+    transition: 1s;
+}
+
+/* .navbar-dark .navbar-navś .nav-link:hover {
+    
+} */
+
+@media only screen and (max-width: 991px) {
+    #logoicon {
+        display: block;
+    }
+    #listicon {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .navbar-collapse {
+        margin-left: 3%;
+    }
+}
+
+
+
+@media only screen and (max-width: 757px) {
+    .navbar-nav.ml-auto {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-toggler {
+        padding: 1px 5px;
+        font-size: 17px;
+        line-height: 0.3;
+        background: transparent;
+        border: none;
+        outline: none;
+    }
+        .navbar-toggler,
+    .navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        outline: none ;
+        outline-style: none;
+    }
+
+}
+
+.navbar-collapse ul li:hover  {
+    display: block;
+    background-color: transparent;
+    /* position: sticky; */
+}

@@ -1,0 +1,39 @@
+.aboutus {
+    padding: 100px;
+    height: 500px;
+    background-color: black;
+}
+
+.info {
+    padding: 35px 35px 35px 35px;
+    margin: 5px 35px 35px 35px;
+
+    box-sizing: border-box;
+    /* width: 50%; */
+
+    height: 350px;
+    float: left;
+
+}
+
+.gtch {
+    padding: 35px 35px 35px 35px;
+    margin: 5px 35px 35px 35px;
+    box-sizing: border-box;
+
+    width: 30%;
+    height: 350px;
+    float: right;
+}
+
+.uselik {
+    padding: 35px 35px 35px 35px;
+    margin: 5px 35px 35px 35px;
+    width: 25%;
+    height: 350px;
+    float: right;
+}
+
+.social a:hover {
+    transform: scale(1.5);
+}

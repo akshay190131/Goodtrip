@@ -1,0 +1,47 @@
+.header {
+    height: 750px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 20px;
+    text-align: center;
+    color: rgb(199, 192, 192);
+}
+        .txt1 {
+            animation: text 5s 1;
+        }
+
+        .txt2 {
+            animation: tex 3s 1;
+        }
+
+        @keyframes tex {
+            0% {
+                color: rgb(199, 192, 0);
+                letter-spacing: 15px;
+            }
+        }
+
+        @keyframes text {
+            0% {
+                color: transparent;
+                margin-bottom: -40px;
+                ;
+            }
+
+            30% {
+                color: transparent;
+                letter-spacing: 25px;
+                margin-bottom: -40px;
+                ;
+            }
+            50% {
+                color: rgb(199, 192, 0);
+            }
+
+            85% {
+                /* color: transparent; */
+                letter-spacing: 30px;
+                margin-bottom: -40px;
+            }
+        }

@@ -1,0 +1,267 @@
+<section class="user">
+    <div class="container emp-profile" *ngIf="user">
+        <form>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img *ngIf="user.image; else addimage;" src="assets/images/user/{{user.image}}">
+                        <ng-template #addimage>
+                            <img src="assets/images/user/favicon.ico">
+                        </ng-template>
+                        <!-- <div class="file btn btn-lg btn-primary">
+                            Change Photo
+                            <input type="file" name="file"/>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="profile-head">
+                        <h5>
+                            {{user.name}}
+                        </h5>
+                        <!-- <h6>
+                                Web Developer and Designer
+                            </h6> -->
+                        <br>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                    aria-controls="home" aria-selected="true">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                    aria-controls="profile" aria-selected="false">Tours Detail</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="row" >
+                        
+                        <div class="col-md-12" >
+                            <div class="tab-content profile-tab" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                    aria-labelledby="home-tab">
+                                    <!-- border: 1px solid mediumblue; -->
+                                    <div class="row" style=" height: 60px; ">
+                                        <div class="col-md-4">
+                                            <label>User Name</label>
+                                        </div>
+                                        <div class="col-md-8"   *ngIf="ct[0]; else elseblock0">
+                                            <p>{{user.username}}</p>
+                                            <button class="profile-edit float-right" (click)="edit(0)"
+                                                    *ngIf="ct[0];">Edit</button>
+                                        </div>
+                                        
+
+                                        <ng-template #elseblock0 >
+                                            <div class="col-md-4">
+                                                <form [formGroup]="editusername" (ngSubmit)="updateform(editusername.value,0)">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control input-lg" [ngClass]="{'is-invalid': !editusername.get('username').valid && editusername.get('username').dirty , 'is-valid': editusername.get('username').valid && editusername.get('username').dirty }"  name="username"
+                                                            placeholder="username" formControlName="username">
+                                                            <div class="invalid-feedback d-block"  *ngIf="editusername.get('username').hasError('required') 
+                                                            && (editusername.get('username').touched || editusername.get('username').dirty)" >Value is required
+                                                            </div>
+                                                            <div class="invalid-feedback d-block"  *ngIf="editusername.get('username').hasError('minlength') 
+                                                            && (editusername.get('username').touched || editusername.get('username').dirty)" >Enter atleast 2 letters
+                                                            </div>
+                                                            <!-- <app-spinner *ngIf="model.pending"></app-spinner> -->
+                                                            <div *ngIf="editusername.get('username').hasError('userExists') && editusername.get('username').touched" class="invalid-feedback d-block"> 
+                                                                User already exists. 
+                                                             </div>
+                                                    </div>
+                                                    <div class="d-inline-flex btn-group">
+                                                        <button [disabled]="editusername.invalid && editusername.touched" type="submit" class=" profile-edit-btn">Save</button>
+                                                        <button type="button" class="profile-edit-btn" (click)="show(0)">Cancel</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </ng-template>
+                                    </div>
+                                    <div class="row" style=" height: 60px; ">
+                                        <div class="col-md-4">
+                                            <label>Name</label>
+                                        </div>
+                                        <div class="col-md-8" *ngIf="ct[1]; else elseblock1">
+                                            <p>{{user.name}}</p>
+                                            <button class="profile-edit float-right" (click)="edit(1)"
+                                                *ngIf="ct[1];">Edit</button>
+                                        </div>
+                                        <ng-template #elseblock1>
+                                            <div class="col-md-4">
+                                                <form [formGroup]="editform" (ngSubmit)="updateform(editform.value,1)">
+                                                    <div class="form-group">
+                                                        <input type="text" [ngClass]="{'is-invalid': !editform.get('name').valid , 'is-valid': editform.get('name').valid && editform.get('name').touched }" class="form-control input" name="name"
+                                                            placeholder="name" formControlName="name">
+                                                            <div class="invalid-feedback d-block"  *ngIf="editform.get('name').hasError('required') 
+                                                            && (editform.get('name').touched || editform.get('name').dirty)">Value is required
+                                                            </div>       
+                                                            <div class="invalid-feedback d-block"  *ngIf="editform.get('name').hasError('minlength') 
+                                                            && (editform.get('name').touched || editform.get('name').dirty)" >Enter atleast 4 letters
+                                                            </div>
+                                                    </div>
+                                                    <div class="d-inline-flex btn-group ">
+                                                        <button [disabled]="editform.invalid" type="submit" class="profile-edit-btn">Save</button>
+                                                        <button type="button" class="profile-edit-btn"
+                                                            (click)="show(1)">Cancel</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </ng-template>
+                                    </div>
+                                    <div class="row" style=" height: 60px; ">
+                                        <div class="col-md-4">
+                                            <label>Email</label>
+                                        </div>
+                                        <div class="col-md-8" *ngIf="ct[2]; else elseblock2">
+                                            <p>{{user.email}}</p>
+                                            <button class="profile-edit float-right" (click)="edit(2)"
+                                                *ngIf="ct[2];">Edit</button>
+                                        </div>
+                                        
+
+                                        <ng-template #elseblock2>
+                                            <div class="col-md-4">
+                                                <form [formGroup]="edituseremail" (ngSubmit)="updateform(edituseremail.value,2)">
+                                                    <div class="form-group">
+                                                        <input type="text" [ngClass]="{'is-invalid': !edituseremail.get('email').valid && edituseremail.get('email').dirty , 'is-valid': edituseremail.get('email').valid && edituseremail.get('email').dirty }" class="form-control input" name="email"
+                                                            placeholder="email" email formControlName="email">
+                                                            <div class="invalid-feedback d-block"  *ngIf="edituseremail.get('email').hasError('required') 
+                                                            && (edituseremail.get('email').touched || edituseremail.get('email').dirty)">Value is required
+                                                            </div> 
+                                                            <div class="invalid-feedback d-block"  *ngIf="edituseremail.get('email').hasError('email') 
+                                                            && (edituseremail.get('email').touched || edituseremail.get('email').dirty)">Not a Valid Email
+                                                            </div>  
+                                                            <div *ngIf="edituseremail.get('email').hasError('emailExists')" class="invalid-feedback d-block"> 
+                                                                Email already exists. 
+                                                             </div>       
+                                                    </div>
+                                                    <div class="d-inline-flex btn-group  ">
+                                                        <button [disabled]="edituseremail.invalid && edituseremail.get('email').touched" type="submit" class="profile-edit-btn">Save</button>
+                                                        <button type="button" class="profile-edit-btn"
+                                                            (click)="show(2)">Cancel</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </ng-template>
+                                    </div>
+                                    <div class="row" style=" height: 60px; ">
+                                        <div class="col-md-4">
+                                            <label>Phone</label>
+                                        </div>
+                                        <div class="col-md-8" *ngIf="ct[3]; else elseblock3">
+                                            <p *ngIf="user.phone; else addphone;">{{user.phone}}</p>
+                                            <button class="profile-edit float-right" (click)="edit(3)"
+                                                *ngIf="ct[3];">Edit</button>
+                                            <ng-template #addphone>
+                                                <p style="color: rgb(133, 131, 131);">Add Phone Number</p>
+                                            </ng-template>
+                                        </div>
+                                        
+
+                                        <ng-template #elseblock3>
+                                            <div class="col-md-4">
+                                                <form [formGroup]="editform" (ngSubmit)="updateform(editform.value,3)">
+                                                    <div class="form-group">
+                                                        <input type="text" 
+                                                        [ngClass]="{'is-invalid': !editform.get('phone').valid , 'is-valid': editform.get('phone').valid && editform.get('phone').touched }" 
+                                                        class="form-control input" 
+                                                        pattern="^[789]\d{9}$"
+                                                        name="phone"
+                                                            placeholder="Phone No." formControlName="phone">
+                                                            <div class="invalid-feedback d-block"  *ngIf="editform.get('phone').hasError('pattern') 
+                                                            && (editform.get('phone').touched || editform.get('phone').dirty)">Not a Valid Number
+                                                            </div>   
+                                                            <!--  -->
+                                                    </div>
+                                                    <div class="d-inline-flex btn-group ">
+                                                        <button [disabled]="editform.invalid" type="submit" class="profile-edit-btn">Save</button>
+                                                        <button type="button" class="profile-edit-btn"
+                                                            (click)="show(3)">Cancel</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </ng-template>
+                                    </div>
+                                    <div class="row" style=" height: 60px; ">
+                                        <div class="col-md-4">
+                                            <label>Bio</label>
+                                        </div>
+                                        <div class="col-md-8" *ngIf="ct[4]; else elseblock4">
+                                            <p *ngIf="user.bio; else addbio;">{{user.bio}}</p>
+                                            <ng-template #addbio>
+                                                <p style="color: rgb(133, 131, 131);">Add Bio</p>
+                                            </ng-template>
+                                            <button class="profile-edit float-right" (click)="edit(4)" *ngIf="ct[4]">Edit</button>
+                                        </div>
+
+                                        <ng-template #elseblock4>
+                                            <div class="col-md-4">
+                                                <form [formGroup]="editform" (ngSubmit)="updateform(editform.value,4)">
+                                                    <div class="form-group">
+                                                        <input type="text" [ngClass]="{'is-invalid': !editform.get('bio').valid , 'is-valid': editform.get('bio').valid && editform.get('bio').touched }" class="form-control input" name="bio"
+                                                            placeholder="bio" formControlName="bio">
+                                                            <div class="invalid-feedback d-block"  *ngIf="editform.get('bio').hasError('maxlength') 
+                                                            && (editform.get('bio').touched || editform.get('bio').dirty)">MaxLength Reached
+                                                            </div>   
+                                                    </div>
+                                                    <div class="d-inline-flex btn-group ">
+                                                        <button [disabled]="editform.invalid"  type="submit" class="profile-edit-btn">Save</button>
+                                                        <button type="button" class="profile-edit-btn"
+                                                            (click)="show(4)">Cancel</button>
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                        </ng-template>
+                                        <!-- <p>{{editform.value | json}} {{editform.status | json}} </p> -->
+
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Total Tours Done</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>3</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Most Visited Place</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Sydney</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>Your detail description</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row logout">
+                <div class=" col-md-2">
+                    <button class=" btn btn-primary btn- btn-lg " (click)="logout()">Logout</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>

@@ -1,0 +1,139 @@
+<!-- <app-package [chilmsg]='message1'></app-package> -->
+<div class="tour">
+    <h1 style="text-align: center; ">{{tourpack.heading1}}</h1>
+    <h4 style="text-align: center;">{{tourpack.heading2}}</h4>
+</div>
+<section class="features">
+    <div class="container">
+        <h2 style="text-align: center;">Popular {{tourpack.destinations.area1}} Destinations</h2>
+        <br>
+        <div class="row">
+            <div class="col-sm-3" *ngFor="let dest of tourpack.destinations.place1">
+
+                <div class="feature-box">
+                    <div class="feature-img">
+
+                        <img src="assets/images/features/destinations/{{dest.image}}">
+
+                    </div>
+                    
+                    <a style="text-decoration:none; display: inline;" [routerLink]="[ '/package' ]" (click)="setmessage(dest.place)"> <span
+                            class="price">{{dest.price}}</span>      {{dest.rating}}/5.0
+                        <!-- <span    class="ratings">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </span> -->
+                                
+                        <div class="placename">
+                            <h3>{{dest.place}}</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align: center;">Popular {{tourpack.destinations.area2}}</h2>
+        <br>
+        <div class="row">
+            <div class="col-sm-3" *ngFor="let dest of tourpack.destinations.place2">
+                <div class=" feature-box">
+                    <div class="feature-img">
+                        <img src="assets/images/features/destinations/{{dest.image}}">
+
+                    </div>
+                    <a style="text-decoration:none; display: inline;" (click)="setmessage(dest.place)" [routerLink]="[ '/package' ]"> <span
+                            class="price">{{dest.price}}</span>      {{dest.rating}}/5.0
+                        <!-- <span    class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </span> -->
+                        <div class="placename">
+                            <h3>{{dest.place}}</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <h2 style="text-align: center;">Popular {{tourpack.destinations.area3}} Stations</h2>
+        <br>
+        <div class="row">
+            <div class="col-sm-3" *ngFor="let dest of tourpack.destinations.place3">
+                <div class=" feature-box">
+                    <div class="feature-img">
+                        <img src="assets/images/features/destinations/{{dest.image}}">
+
+                    </div>
+                    <a style="text-decoration:none; display: inline;" (click)="setmessage(dest.place)" [routerLink]="[ '/package' ]"> <span
+                            class="price">{{dest.price}}</span>      {{dest.rating}}/5.0
+                        <!-- <span    class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </span> -->
+                        <div class="placename">
+                            <h3>{{dest.place}}</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align: center;">Trending {{tourpack.destinations.area4}} Destinations</h2>
+        <br>
+        <div class="row">
+            <div class="col-sm-3" *ngFor="let dest of tourpack.destinations.place4">
+                <div class=" feature-box">
+                    <div class="feature-img">
+                        <img src="assets/images/features/destinations/{{dest.image}}">
+
+                    </div>
+                    <a style="text-decoration:none; display: inline;" (click)="setmessage(dest.place)" [routerLink]="[ '/package' ]"> <span
+                            class="price">{{dest.price}}</span>      {{dest.rating}}/5.0
+                        <!-- <span    class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </span> -->
+                        <div class="placename">
+                            <h3>{{dest.place}}</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align: center;">Trending {{tourpack.destinations.area5}} Places</h2>
+        <br>
+        <div class="row">
+            <div class="col-sm-3" *ngFor="let dest of tourpack.destinations.place5">
+                <div class=" feature-box">
+                    <div class="feature-img">
+                        <img src="assets/images/features/destinations/{{dest.image}}">
+
+                    </div>
+                    <a style="text-decoration:none; display: inline;" (click)="setmessage(dest.place)" [routerLink]="[ '/package' ]"> <span
+                            class="price">{{dest.price}}</span>      {{dest.rating}}/5.0
+                        <!-- <span    class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </span> -->
+                        <div class="placename">
+                            <h3>{{dest.place}}</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

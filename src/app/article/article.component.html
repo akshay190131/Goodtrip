@@ -1,0 +1,54 @@
+<section id="blog" class="  scrollto clearfix ">
+    <div class="container-fluid secondary-color">
+        <div class="row head1">
+            <div class="col-12">
+                <div class="row r1  justify-content-center">
+                    <h3>{{post.title | uppercase  }}</h3>
+                </div>
+                <div class="row r2  justify-content-center">
+                    <p class="post-sub">By {{post.author}} | {{post.date | date:'dd-MMM-yyyy'}}  </p>
+                </div>
+            </div>
+        </div>
+        <div class=" row" *ngIf="post">
+            <div class="post-block1 col-7">
+                <div class="post-featured-image row r3">
+                    <img src="assets/images/blog/{{post.image}}" style="width: 100%; height: 80%;">
+                </div>
+                <div   class="row r4">
+                    <p class=" text-body t1 " ><b>Discription-</b></p> 
+                    <p class=" text-body t1 " id="preview" markdown [data]="post.excert"  ></p>
+                </div>
+            </div>
+            <div class="comments col-5">
+                <div class="row rc1">
+                    <div class="col3 offset-1">
+                        <p><i class="fa fa-heart"></i>Total Likes</p>
+                    </div>
+                    <div class="col3 offset-6">
+                        <p>5 comments</p>
+                    </div>
+                </div>
+                <div class="row rc2">
+                    <div class="col-3 ">
+                        <a href="">
+                            <p class="btn btn-outline-dark"><i class="fa fa-heart"></i>Like</p>
+                        </a>
+                    </div>
+                    <div class="col-3 offset-6">
+                        <a href="">
+                            <p class="btn btn-outline-dark"><i class="fa fa-comment" aria-hidden="true"></i> Comment</p>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="row rc3">
+                    For comments
+                </div>
+            </div>
+        </div>
+
+        <!-- <a (click)="getlocback()" class="btn btn-lg btn-light btn-outline-dark offset-5 " >Back</a> -->
+
+    </div>
+</section>

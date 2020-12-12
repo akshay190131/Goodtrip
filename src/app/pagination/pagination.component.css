@@ -1,0 +1,17 @@
+.pagination {
+margin-top: 20px;
+}
+a i {
+    color: rgb(0, 38, 255);
+
+}
+li {
+   cursor: pointer; 
+}
+.pagination> li.disabled a i{
+    cursor: not-allowed ;
+    color: rgb(68, 66, 66);
+}
+.pagination>li.disabled {
+    cursor: not-allowed ;
+}
